@@ -3,120 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>My Dev Portfolio</title>
+    <link rel="stylesheet" href="style.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">Dev<span>Portfolio</span>.</div>
+    <nav>
+        <div class="logo">Dev<span class="accent">Portfolio</span></div>
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
             <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#add-work" class="btn-nav">Add Work</a></li>
         </ul>
-        <div class="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-        </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-content hidden">
-            <h1>Hello, I'm <span class="highlight">Dev  </span></h1>
-            <p>A Creative Developer building things for the web.</p>
-            <a href="#projects" class="btn">View My Work</a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="container hidden">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <p>
-                I am a passionate developer focused on creating clean, elegant, and efficient code. 
-                I specialize in HTML, CSS, and JavaScript. I love turning complex problems into simple, beautiful, and intuitive interface designs.
-            </p>
-            <div class="skills">
-                <span class="skill-tag">HTML5</span>
-                <span class="skill-tag">CSS3</span>
-                <span class="skill-tag">JavaScript</span>
-                <span class="skill-tag">Git</span>
-                <span class="skill-tag">Responsive Design</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="container hidden">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-grid">
-            <!-- Project Card 1 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Project One</h3>
-                    <p>A brief description of what this project does. Maybe a landing page or a dashboard.</p>
-                    <div class="card-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 2 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Project Two</h3>
-                    <p>A description of a web application using JavaScript logic and API integration.</p>
-                    <div class="card-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project Card 3 -->
-            <div class="project-card">
-                <div class="card-content">
-                    <h3>Project Three</h3>
-                    <p>Another amazing project showcasing CSS animations and responsive layout.</p>
-                    <div class="card-links">
-                        <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
-                        <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="container hidden">
-        <h2 class="section-title">Get In Touch</h2>
-        <div class="contact-wrapper">
-            <p>Currently open for new opportunities. Let's build something great together.</p>
-            <a href="mailto:your.email@example.com" class="btn-outline">Say Hello</a>
-            
-            <div class="social-links">
-                <a href="https://github.com/The-Dev18" target="_self"><i class="fab fa-github"></i></a>
+    <header id="home">
+        <div class="hero-content">
+            <h1>Hi, I'm <span class="accent">Dev</span></h1>
+            <p>A passionate Developer building cool things with code.</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-linkedin"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
+    </header>
+
+    <!-- Admin Section: Add New Project -->
+    <!-- In a real app, this would be behind a login -->
+    <section id="add-work">
+        <div class="container">
+            <h2>Upload New Project</h2>
+            <form id="project-form">
+                <input type="text" id="p-title" placeholder="Project Title" required>
+                <input type="text" id="p-tags" placeholder="Tags (e.g., HTML, CSS, Python)" required>
+                <input type="text" id="p-img" placeholder="Image URL (optional)" >
+                <textarea id="p-desc" placeholder="Project Description" required></textarea>
+                <input type="text" id="p-link" placeholder="Project Link (GitHub/Live Demo)" required>
+                <button type="submit" class="btn-submit">Add to Portfolio</button>
+            </form>
+        </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Projects Display Section -->
+    <section id="projects">
+        <div class="container">
+            <h2>My Work</h2>
+            <div class="projects-grid" id="projects-container">
+                <!-- Projects will be injected here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; <span id="year"></span> Dev. Built with HTML, CSS & JS.</p>
+        <p>&copy; 2023 My Dev Portfolio. Built with code.</p>
     </footer>
 
     <script src="script.js"></script>
